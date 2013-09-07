@@ -63,7 +63,7 @@ createWindow title windowWidth windowHeight windowStyle = do
 
 translateWindowStyle :: WindowStyle -> DWORD
 translateWindowStyle windowStyle =
-  if windowStyle == windowStyleWindow
+  if windowStyle == WindowStyleWindow
     then wS_VISIBLE + wS_CAPTION + wS_MINIMIZEBOX + wS_THICKFRAME + wS_MAXIMIZEBOX + wS_SYSMENU
     else wS_VISIBLE
 
@@ -71,7 +71,7 @@ tryAdjustWindowRect :: Int -> Int -> WindowStyle -> DWORD -> (Int, Int)
 tryAdjustWindowRect windowWidth windowHeight windowStyle realWindowStyle = let
   rect = (0, 0, fromIntegral windowWidth :: Int32, fromIntegral windowHeight :: Int32)
   newRect = adjustWindowRect rect realWindowStyle False in
-  if windowStyle == windowStyleWindow
+  if windowStyle == WindowStyleWindow
     then (windowWidth, windowHeight)
     else (windowWidth, windowHeight)
 

@@ -5,5 +5,5 @@ import RedPill.Window.WindowStyle
 
 main :: IO ()
 main = do
-  createWindow "RedPill" 400 300 windowStyleWindow
+  createWindow "RedPill" 400 300 WindowStyleWindow
 
