@@ -16,6 +16,7 @@ import Graphics.Win32.GDI.Types (HWND, RECT)
 import Graphics.Win32.Message
     (WindowMessage, wM_KEYDOWN, wM_LBUTTONDOWN, wM_DESTROY, wM_PAINT, wM_CLOSE,
     wM_SYSKEYDOWN)
+import RedPill.Graphics.D3D11.Renderer
 import RedPill.Window.WindowStyle
 import Data.Int (Int32)
 import Data.Maybe
@@ -53,7 +54,8 @@ createWindow title windowWidth windowHeight windowStyle = do
       Nothing -- Maybe HMENU 
       hInst -- HINSTANCE
       wndProc
-
+    
+    _ <- initRenderer hWnd windowStyle windowWidth windowHeight
     -- _ <- showWindow hWnd sW_SHOWNORMAL -- only in fullscreen
     updateWindow hWnd
     allocaMessage pump

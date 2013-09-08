@@ -11,7 +11,9 @@ executable RedPill
                    base >= 4,
                    Win32
   ghc-options:     -Wall
-  other-modules:   RedPill.Window.VirtualKey,
+  other-modules:   
+                   RedPill.Window.VirtualKey,
                    RedPill.Window.WindowStyle,
-                   RedPill.Window.Win32.Window
+                   RedPill.Window.Win32.Window,
+                   RedPill.Graphics.D3D11.Renderer
 
